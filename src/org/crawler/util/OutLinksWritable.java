@@ -55,7 +55,6 @@ public class OutLinksWritable implements WritableComparable<OutLinksWritable> {
 		this.timeStamp = timeStamp;
 	}
 
-	@Override
 	public void readFields(DataInput input) throws IOException {
 		// TODO Auto-generated method stub
 		this.outLinks.readFields(input);
@@ -63,7 +62,6 @@ public class OutLinksWritable implements WritableComparable<OutLinksWritable> {
 		this.typeOfOutlink.readFields(input);
 	}
 
-	@Override
 	public void write(DataOutput output) throws IOException {
 		// TODO Auto-generated method stub
 		this.outLinks.write(output);
@@ -71,7 +69,6 @@ public class OutLinksWritable implements WritableComparable<OutLinksWritable> {
 		this.typeOfOutlink.write(output);
 	}
 
-	@Override
 	public int compareTo(OutLinksWritable arg0) {
 		// TODO Auto-generated method stub
 		int cmp = this.outLinks.toString().compareTo(arg0.outLinks.toString());

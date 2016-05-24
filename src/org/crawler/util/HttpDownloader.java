@@ -50,7 +50,6 @@ public class HttpDownloader implements Callable<String> {
 		this.outputChann = fileChannel;
 	}
 
-	@Override
 	public String call() throws Exception {
 		connection.connect();
 		InputStream inputStream = connection.getInputStream();

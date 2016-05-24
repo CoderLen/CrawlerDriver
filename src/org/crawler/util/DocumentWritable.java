@@ -76,7 +76,6 @@ public class DocumentWritable implements WritableComparable<DocumentWritable> {
 		this.metaIndex = metaIndex;
 	}
 
-	@Override
 	public void readFields(DataInput input) throws IOException {
 		// TODO Auto-generated method stub
 		this.document = input.readUTF();
@@ -88,7 +87,6 @@ public class DocumentWritable implements WritableComparable<DocumentWritable> {
 	/* (non-Javadoc)
 	 * @see org.apache.hadoop.io.Writable#write(java.io.DataOutput)
 	 */
-	@Override
 	public void write(DataOutput output) throws IOException {
 		// TODO Auto-generated method stub
 		output.writeUTF(this.document);
@@ -106,7 +104,6 @@ public class DocumentWritable implements WritableComparable<DocumentWritable> {
 	/* (non-Javadoc)
 	 * @see java.lang.Comparable#compareTo(java.lang.Object)
 	 */
-	@Override
 	public int compareTo(DocumentWritable documentWritable) {
 		// TODO Auto-generated method stub
 		int cmp = this.document.compareTo(documentWritable.document);

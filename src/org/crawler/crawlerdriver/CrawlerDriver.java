@@ -26,9 +26,6 @@ public class CrawlerDriver {
 
 		public void map(LongWritable ikey, Text ivalue, Context context)
 				throws IOException, InterruptedException {
-			logger.info("InverseMapper.....");
-//			System.out.println("key: " + ikey);
-//			System.out.println("value:" + ivalue);
 			logger.info("InverseMapper End!");
 			context.write(ivalue, ikey);
 		}
@@ -72,8 +69,8 @@ public class CrawlerDriver {
 		job.setOutputValueClass(LongWritable.class);
 
 		// TODO: specify input and output DIRECTORIES (not files)
-		FileInputFormat.addInputPath(job, new Path("hdfs://localhost:9000/in"));
-		FileOutputFormat.setOutputPath(job, new Path("hdfs://localhost:9000/doc/5"));
+		FileInputFormat.addInputPath(job, new Path("hdfs://bigdata01:8020/in"));
+		FileOutputFormat.setOutputPath(job, new Path("hdfs://bigdata01:8020/doc/5"));
 
 		if (!job.waitForCompletion(true))
 			return;
